@@ -5,7 +5,8 @@ class SofokeModel extends Model {
   protected $connection = "DBsofoke";
 
 	public function getAll() {
-		$result = static::fetchAll();
+		$sql = "select * from ".$this->table." where estado = 'new'";
+		$result = static::query($sql);
 		return $result;
 	}
 }
