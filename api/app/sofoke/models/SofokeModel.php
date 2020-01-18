@@ -1,8 +1,8 @@
 <?php
-class CookieModel extends Model {
-	protected $table = "sofoke3";
+class SofokeModel extends Model {
+	protected $table = "sofoke2";
   protected $primaryKey = "id";
-  protected $connection = "DBCookie";
+  protected $connection = "DBsofoke";
 
 	public function getAll() {
 		$result = static::fetchAll();

@@ -1,10 +1,10 @@
 <?php
-class DBCookie extends ENV {
+class DBsofoke extends ENV {
 	private function __construct(){}
 
 	private static function connection() {
 		$env = new static();
-		$db = $env->uriDB[$env->env]['cookies'];
+		$db = $env->uriDB[$env->env]['sofoke'];
 		$uri = $db['uri'];
 		$user = $db['user'];
 		$pwd = $db['pwd'];
