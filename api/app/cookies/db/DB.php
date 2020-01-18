@@ -1,9 +1,15 @@
 <?php
-class DBCookie {
+class DBCookie extends ENV {
 	private function __construct(){}
 
 	private static function connection() {
-		return new PDO("mysql:host=127.0.0.1; dbname=appvideo_cookies; charset=utf8", "root", "gui");
+		$env = new static();
+		$db = $env->uriDB[$env->env]['cookies'];
+		$uri = $db['uri'];
+		$user = $db['user'];
+		$pwd = $db['pwd'];
+		
+		return new PDO($uri, $user, $pwd);
 	}
 
 	public static function query($sql, $params = []) {
