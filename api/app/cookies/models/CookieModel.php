@@ -5,7 +5,8 @@ class CookieModel extends Model {
   protected $connection = "DBCookie";
 
 	public function getAll() {
-		$result = static::fetchAll();
+		$sql = "select * from ".$this->table." where estado = 'nuevo' or estado = 'new'";
+		$result = static::query($sql);
 		return $result;
 	}
 }

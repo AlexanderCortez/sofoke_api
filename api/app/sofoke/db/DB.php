@@ -12,7 +12,7 @@ class DBsofoke extends ENV {
 		return new PDO($uri, $user, $pwd);
 	}
 
-	public static function query($sql, $params = []) {
+	public static function query($sql, $params = array()) {
 		$statement = static::connection()->prepare($sql);
 		$statement->execute($params);
     $result = $statement->fetchAll();

@@ -28,6 +28,7 @@ class Model {
 	}
 
 	public static function query($sql) {
+		$model = new static();
 		$result = $model->connection::query($sql);
 		return $result;
 	}
